@@ -1,6 +1,4 @@
-## afahounko.github.io
-
-## OpenvSwitch compile - RHEL7, CentOS 7, Fedora 25
+## OpenvSwitch compile - RHEL 7, CentOS 7, Fedora 25
 
 **Note: for Fedora, use `dnf` instead of `yum`
 
