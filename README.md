@@ -20,9 +20,11 @@ Download the latest version of OpenvSwitch binary:
     $ wget -qO- http://openvswitch.org/releases/openvswitch-2.x.y.tar.gz | tar xvz -C ~/rpmbuild/SOURCES
 
 Install necessary binaries:
+
     $ sudo yum -y install gcc openssl-devel selinux-policy-devel
    
 Build rpm:
+
     $ rpmbuild -bb ~/rpmbuild/SOURCES/openvswitch-2.x.y/rhel/openvswitch.spec   
 
 OpenvSwitch rpms can now be installed from `~/rpmbuild/RPMS` folder
