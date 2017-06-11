@@ -1,6 +1,6 @@
-== afahounko.github.io
+## afahounko.github.io
 
-== OpenvSwitch compile - RHEL7, CentOS 7, Fedora 25
+## OpenvSwitch compile - RHEL7, CentOS 7, Fedora 25
 
 **Note: for Fedora, use `dnf` instead of `yum`
 
@@ -36,8 +36,10 @@ Run our first OpenvSwitch command:
     # ovs-vsctl show
         ovs_version: "2.7.0"
  
+** In my example i am ruuning the version 2.7.0 of OpenvSwitch.
+
 
  
-== Libvirt & OpenvSwitch
+## Libvirt & OpenvSwitch
 
-== Ansible
+## Ansible
