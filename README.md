@@ -1,11 +1,15 @@
 ## OpenvSwitch compile - RHEL 7, CentOS 7, Fedora 25
 
-**Note: for Fedora, use `dnf` instead of `yum`
+*Note:* for Fedora, use `dnf` instead of `yum`
 
 I will not advocate why we should use OpenvSwitch instead of Linux bridges, reasons are numerous. OpenvSwitch brings all Software Defined Network (SDN) capabilities within linux Operating System.
 Open vSwitch is a production quality, multilayer virtual switch licensed under the open source Apache 2.0 license.  It is designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols (e.g. NetFlow, sFlow, IPFIX, RSPAN, CLI, LACP, 802.1ag).  In addition, it is designed to support distribution across multiple physical servers similar to VMware's vNetwork distributed vswitch or Cisco's Nexus 1000V
 
 To use the latest rpm version of OpenvSwitch (2.7.0 for example) instead of the one's available in the epel repository.
+
+Install necessary binaries to build rpm:
+
+    $ sudo yum -y install gcc openssl-devel selinux-policy-devel
 
 Create rpm build environment:
 
@@ -13,17 +17,13 @@ Create rpm build environment:
     $ cd ~
     $ rpmdev-setuptree
     
-The latest command will create  `rpmbuild` folder.
+The latest command will create the folder  `~/rpmbuild`.
    
-Download the latest version of OpenvSwitch binary from http://openvswitch.org:
+Download and extract in `~/rpmbuild/SOURCES` the latest version of OpenvSwitch binary from http://openvswitch.org:
 
     $ wget -qO- http://openvswitch.org/releases/openvswitch-2.x.y.tar.gz | tar xvz -C ~/rpmbuild/SOURCES
-
-Install necessary binaries:
-
-    $ sudo yum -y install gcc openssl-devel selinux-policy-devel
    
-Build rpm from spec file:
+Build rpms from openvswitch spec file:
 
     $ rpmbuild -bb ~/rpmbuild/SOURCES/openvswitch-2.x.y/rhel/openvswitch.spec   
 
@@ -42,7 +42,7 @@ Run our first OpenvSwitch command:
     # ovs-vsctl show
         ovs_version: "2.7.0"
  
-** In my example i am ruuning the version 2.7.0 of OpenvSwitch.
+In my example i am running the version *2.7.0* of OpenvSwitch.
 
 
  
