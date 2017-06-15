@@ -102,31 +102,36 @@ These commands on system boot will create OpenvSwitch bridges with the configure
 Create three (03) Libvirt network's xml files mapped to the OpenvSwitch bridges:
 
 `ovsbr-dmz.xml`
-
-		<network>
-		  <name>ovsbr-dmz</name>
-		  <forward mode='bridge'/>
-		  <bridge name='ovsbr-dmz'/>
-		  <virtualport type='openvswitch'/>
-		</network>
+```
+<network>
+  <name>ovsbr-dmz</name>
+  <forward mode='bridge'/>
+  <bridge name='ovsbr-dmz'/>
+  <virtualport type='openvswitch'/>
+</network>
+```
 		
 `ovsbr-int.xml`
 
-		<network>
-		  <name>ovsbr-int</name>
-		  <forward mode='bridge'/>
-		  <bridge name='ovsbr-int'/>
-		  <virtualport type='openvswitch'/>
-		</network>
+```
+<network>
+  <name>ovsbr-int</name>
+  <forward mode='bridge'/>
+  <bridge name='ovsbr-int'/>
+  <virtualport type='openvswitch'/>
+</network>
+```
 		
 `ovsbr-noc.xml`		
 
-		<network>
-		  <name>ovsbr-noc</name>
-		  <forward mode='bridge'/>
-		  <bridge name='ovsbr-noc'/>
-		  <virtualport type='openvswitch'/>
-		</network>
+```
+<network>
+  <name>ovsbr-noc</name>
+  <forward mode='bridge'/>
+  <bridge name='ovsbr-noc'/>
+  <virtualport type='openvswitch'/>
+</network>
+```
 
 Define and start the network
 
