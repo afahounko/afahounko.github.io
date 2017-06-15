@@ -65,15 +65,15 @@ ovsbr-dmz:
 `/etc/sysconfig/network-scripts/ifcfg-ovsbr-int`
 
 ```
-	DEVICE=ovsbr-int
-	ONBOOT=yes
-	DEVICETYPE=ovs
-	TYPE=OVSBridge
-	BOOTPROTO=static
-	IPADDR=10.10.0.1
-	NETMASK=255.255.255.0
-	HOTPLUG=no
-	ZONE=public
+DEVICE=ovsbr-int
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSBridge
+BOOTPROTO=static
+IPADDR=10.10.0.1
+NETMASK=255.255.255.0
+HOTPLUG=no
+ZONE=public
 ```
 
 `/etc/sysconfig/network-scripts/ifcfg-ovsbr-dmz`
