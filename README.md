@@ -50,58 +50,66 @@ In my example i am running the version *2.7.0* of OpenvSwitch.
 We assume that libvirtd and OpenvSwitch are enable and running on the system.
 Let's create three (03) subnets with OpenvSwitch bridges (`ovsbr-dmz`, `ovsbr-int`, `ovsbr-noc`) and map them to libvirt networks.
 OpenvSwitch subnets are identified by the following parameters:
-<pre>
+
+```
 ovsbr-noc:
    ip: 10.30.0.1/24
 ovsbr-int:
    ip: 10.10.0.1/24
 ovsbr-dmz:
    ip: 10.20.0.1/24 
-</pre>
+```
 
 ###Permanent network configurations on RedHat, CentOS and Fedora:
 
 `/etc/sysconfig/network-scripts/ifcfg-ovsbr-int`
 
-		DEVICE=ovsbr-int
-		ONBOOT=yes
-		DEVICETYPE=ovs
-		TYPE=OVSBridge
-		BOOTPROTO=static
-		IPADDR=10.10.0.1
-		NETMASK=255.255.255.0
-		HOTPLUG=no
-		ZONE=public
+```
+	DEVICE=ovsbr-int
+	ONBOOT=yes
+	DEVICETYPE=ovs
+	TYPE=OVSBridge
+	BOOTPROTO=static
+	IPADDR=10.10.0.1
+	NETMASK=255.255.255.0
+	HOTPLUG=no
+	ZONE=public
+```
 
 `/etc/sysconfig/network-scripts/ifcfg-ovsbr-dmz`
 
-		DEVICE=ovsbr-dmz
-		ONBOOT=yes
-		DEVICETYPE=ovs
-		TYPE=OVSBridge
-		BOOTPROTO=static
-		IPADDR=10.20.0.1
-		NETMASK=255.255.255.0
-		HOTPLUG=no
-		ZONE=public
+```
+DEVICE=ovsbr-dmz
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSBridge
+BOOTPROTO=static
+IPADDR=10.20.0.1
+NETMASK=255.255.255.0
+HOTPLUG=no
+ZONE=public
+```
 
 `/etc/sysconfig/network-scripts/ifcfg-ovsbr-noc`
 
-		DEVICE=ovsbr-noc
-		ONBOOT=yes
-		DEVICETYPE=ovs
-		TYPE=OVSBridge
-		BOOTPROTO=static
-		IPADDR=10.30.0.1
-		NETMASK=255.255.255.0
-		HOTPLUG=no
-		ZONE=public
+```
+DEVICE=ovsbr-noc
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSBridge
+BOOTPROTO=static
+IPADDR=10.30.0.1
+NETMASK=255.255.255.0
+HOTPLUG=no
+ZONE=public
+```
 
 These commands on system boot will create OpenvSwitch bridges with the configured ip addresses.
 
 Create three (03) Libvirt network's xml files mapped to the OpenvSwitch bridges:
 
 `ovsbr-dmz.xml`
+
 ```
 <network>
   <name>ovsbr-dmz</name>
