@@ -118,6 +118,13 @@ Create three (03) Libvirt network's xml files mapped to the OpenvSwitch bridges:
   <virtualport type='openvswitch'/>
 </network>
 ```
+
+Define and start the ovsbr-dmz network
+
+	  # virsh net-define ovsbr-dmz.xml
+	  # virsh net-autostart ovsbr-dmz
+	  # virsh net-start ovsbr-dmz
+	  
 		
 `ovsbr-int.xml`
 
@@ -129,6 +136,13 @@ Create three (03) Libvirt network's xml files mapped to the OpenvSwitch bridges:
   <virtualport type='openvswitch'/>
 </network>
 ```
+
+Define and start the ovsbrt-int network
+
+	  # virsh net-define ovsbr-int.xml
+	  # virsh net-autostart ovsbr-int
+	  # virsh net-start ovsbr-int
+	  
 		
 `ovsbr-noc.xml`		
 
@@ -141,11 +155,11 @@ Create three (03) Libvirt network's xml files mapped to the OpenvSwitch bridges:
 </network>
 ```
 
-Define and start the network
+Define and start the ovsbr-noc network
 
-	  # virsh net-define ovsbr-int.xml
-	  # virsh net-autostart ovsbr-int
-	  # virsh net-start ovsbr-int
+	  # virsh net-define ovsbr-noc.xml
+	  # virsh net-autostart ovsbr-noc
+	  # virsh net-start ovsbr-noc
 
   
 
